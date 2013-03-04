@@ -54,7 +54,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 </head>
 <body>
 <div id="container">
-<div id="header">
+<header id="header">
   <?php if ($logo) { ?>
   <div id="logo"><a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a></div>
   <?php } ?>
@@ -73,9 +73,9 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
     <?php } ?>
   </div>
   <div class="links"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a><a href="<?php echo $wishlist; ?>" id="wishlist-total"><?php echo $text_wishlist; ?></a><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></div>
-</div>
+</header>
 <?php if ($categories) { ?>
-<div id="menu">
+<nav id="menu">
   <ul>
     <?php foreach ($categories as $category) { ?>
     <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
@@ -96,6 +96,6 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
     </li>
     <?php } ?>
   </ul>
-</div>
+</nav>
 <?php } ?>
 <div id="notification"></div>
