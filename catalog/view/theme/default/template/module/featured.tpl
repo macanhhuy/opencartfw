@@ -1,9 +1,9 @@
 <div class="box">
   <div class="box-heading"><?php echo $heading_title; ?></div>
-  <div class="box-content">
-    <div class="box-product">
+  <div class="box-content container-fluid">
+    <div class="box-product row-fluid">
       <?php foreach ($products as $product) { ?>
-      <div>
+      <div class="span3">
         <?php if ($product['thumb']) { ?>
         <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
         <?php } ?>

@@ -65,7 +65,7 @@ label {
 }
 /* layout */
 #container {
-	width: 980px;
+	max-width: 980px;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: left;
@@ -90,21 +90,17 @@ label {
 }
 /* header */
 #header {
-	height: 90px;
+	min-height: 90px;
 	margin-bottom: 7px;
 	padding-bottom: 4px;
 	position: relative;
 	z-index: 99;
 }
 #header #logo {
-	position: absolute;
-	top: 25px;
-	left: 15px;
+	text-align: center;
 }
 #language {
-	position: absolute;
-	top: 15px;
-	left: 320px;
+	
 	width: 80px;
 	color: #999;
 	line-height: 17px;
@@ -135,15 +131,12 @@ label {
 	text-decoration: none;
 }
 #header #cart {
-	position: absolute;
-	top: 0px;
-	right: 145px;
+	
 	z-index: 9;
 	min-width: 300px;
 }
 #header #cart .heading {
 	float: right;
-	margin-right: 172px;
 	margin-top: 15px;
 	padding-left: 14px;
 	padding-right: 14px;
@@ -258,10 +251,7 @@ label {
 	text-align: center;
 }
 #header #search {
-	position: absolute;
-	top: 15px;
-	right: 0px;
-	width: 298px;
+	min-width: 298px;
 	z-index: 15;
 }
 #header .button-search {
@@ -276,7 +266,7 @@ label {
 #header #search input {
 	background: #FFF;
 	padding: 1px 1px 1px 33px;
-	width: 262px;
+	
 	height: 21px;
 	border: 1px solid #CCCCCC;
 	-webkit-border-radius: 3px 3px 3px 3px;
@@ -288,18 +278,13 @@ label {
 	box-shadow: 0px 2px 0px #F0F0F0;
 }
 #header #welcome {
-	position: absolute;
-	top: 47px;
-	right: 0px;
 	z-index: 5;
-	width: 298px;
+	min-width: 298px;
 	text-align: right;
 	color: #999999;
 }
 #header .links {
-	position: absolute;
-	right: 0px;
-	bottom: 3px;
+	
 	font-size: 10px;
 	padding-right: 10px;
 }
@@ -677,11 +662,7 @@ a.button:hover, input.button:hover {
 	overflow: auto;
 }
 .box-product > div {
-	width: 130px;
-	display: inline-block;
-	vertical-align: top;
-	margin-right: 20px;
-	margin-bottom: 20px;
+	
 }
 #column-left + #column-right + #content .box-product > div {
 	width: 119px;
@@ -1640,4 +1621,11 @@ ul.box-filter > li ul {
 }
 .banner div img {
 	margin-bottom: 20px;
+}
+
+.box-product > .span3 {
+text-align: center;
+border: 1px solid #f2f2f2;
+margin: 5px 0;
+padding: 10px;
 }
