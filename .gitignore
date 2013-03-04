@@ -10,3 +10,5 @@ image/cache/data/*
 system/cache
 system/logs
 .DS_Store
+/system
+/image
