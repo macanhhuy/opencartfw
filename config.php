@@ -16,7 +16,7 @@ define('DIR_IMAGE', '/Applications/MAMP/htdocs/opencart/image/');
 define('DIR_CACHE', '/Applications/MAMP/htdocs/opencart/system/cache/');
 define('DIR_DOWNLOAD', '/Applications/MAMP/htdocs/opencart/download/');
 define('DIR_LOGS', '/Applications/MAMP/htdocs/opencart/system/logs/');
-
+//Test
 // DB
 define('DB_DRIVER', 'mysql');
 define('DB_HOSTNAME', 'localhost');
