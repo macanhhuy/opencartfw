@@ -1,6 +1,7 @@
 config.php
+config2.php
 admin/config.php
-
+admin/config2.php
 !index.html
 
 download
