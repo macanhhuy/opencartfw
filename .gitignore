@@ -9,3 +9,4 @@ image/cache/*.jpg
 image/cache/data/*
 system/cache
 system/logs
+.DS_Store
