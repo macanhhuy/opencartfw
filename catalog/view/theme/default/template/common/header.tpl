@@ -86,7 +86,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
   <div class="row-fluid">
 
   <div class="links pull-right">
-    <a href="<?php echo $home; ?>" class="visible-phone" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="<?php echo $text_home; ?>"><i class="icon-home"></i></a>
+    <a href="<?php echo $home; ?>" class="visible-phone hidden-desktop" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="<?php echo $text_home; ?>"><i class="icon-home"></i></a>
     <a href="<?php echo $home; ?>" class="hidden-phone"><?php echo $text_home; ?></a><a href="<?php echo $wishlist; ?>" id="wishlist-total" class="hidden-phone"><?php echo $text_wishlist; ?></a><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></div>
   </div>
 
