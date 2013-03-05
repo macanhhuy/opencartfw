@@ -11,7 +11,7 @@
   <div class="box">
     <div class="heading">
       <h1><img src="view/image/layout.png" alt="" /> <?php echo $heading_title; ?></h1>
-      <div class="buttons"><a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a><a href="<?php echo $cancel; ?>" class="button"><?php echo $button_cancel; ?></a></div>
+      <div class="buttons"><a onclick="$('#form').submit();" class="btn btn-primary"><?php echo $button_save; ?></a><a href="<?php echo $cancel; ?>" class="btn btn-primary"><?php echo $button_cancel; ?></a></div>
     </div>
     <div class="content">
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form">
@@ -157,7 +157,7 @@
                 <?php } ?>
                 <?php } ?></td>
               <td class="right"><input type="text" name="custom_field_value[<?php echo $custom_field_value_row; ?>][sort_order]" value="<?php echo $custom_field_value['sort_order']; ?>" size="1" /></td>
-              <td class="left"><a onclick="$('#custom-field-value-row<?php echo $custom_field_value_row; ?>').remove();" class="button"><?php echo $button_remove; ?></a></td>
+              <td class="left"><a onclick="$('#custom-field-value-row<?php echo $custom_field_value_row; ?>').remove();" class="btn btn-primary"><?php echo $button_remove; ?></a></td>
             </tr>
           </tbody>
           <?php $custom_field_value_row++; ?>
@@ -165,7 +165,7 @@
           <tfoot>
             <tr>
               <td colspan="2"></td>
-              <td class="left"><a onclick="addCustomFieldValue();" class="button"><?php echo $button_add_custom_field_value; ?></a></td>
+              <td class="left"><a onclick="addCustomFieldValue();" class="btn btn-primary"><?php echo $button_add_custom_field_value; ?></a></td>
             </tr>
           </tfoot>
         </table>
@@ -216,7 +216,7 @@ function addCustomFieldValue() {
     <?php } ?>
 	html += '    </td>';
 	html += '    <td class="right"><input type="text" name="custom_field_value[' + custom_field_value_row + '][sort_order]" value="" size="1" /></td>';
-	html += '    <td class="left"><a onclick="$(\'#custom-field-value-row' + custom_field_value_row + '\').remove();" class="button"><?php echo $button_remove; ?></a></td>';
+	html += '    <td class="left"><a onclick="$(\'#custom-field-value-row' + custom_field_value_row + '\').remove();" class="btn btn-primary"><?php echo $button_remove; ?></a></td>';
 	html += '  </tr>';	
     html += '</tbody>';
 	

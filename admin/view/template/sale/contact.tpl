@@ -8,7 +8,7 @@
   <div class="box">
     <div class="heading">
       <h1><img src="view/image/mail.png" alt="" /> <?php echo $heading_title; ?></h1>
-      <div class="buttons"><a id="button-send" onclick="send('index.php?route=sale/contact/send&token=<?php echo $token; ?>');" class="button"><?php echo $button_send; ?></a><a href="<?php echo $cancel; ?>" class="button"><?php echo $button_cancel; ?></a></div>
+      <div class="buttons"><a id="button-send" onclick="send('index.php?route=sale/contact/send&token=<?php echo $token; ?>');" class="btn btn-primary"><?php echo $button_send; ?></a><a href="<?php echo $cancel; ?>" class="btn btn-primary"><?php echo $button_cancel; ?></a></div>
     </div>
     <div class="content">
         <table id="mail" class="form">

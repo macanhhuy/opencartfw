@@ -8,7 +8,7 @@
   <div class="box">
     <div class="heading">
       <h1><img src="view/image/order.png" alt="" /> <?php echo $heading_title; ?></h1>
-      <div class="buttons"><a href="<?php echo $invoice; ?>" target="_blank" class="button"><?php echo $button_invoice; ?></a><a href="<?php echo $cancel; ?>" class="button"><?php echo $button_cancel; ?></a></div>
+      <div class="buttons"><a href="<?php echo $invoice; ?>" target="_blank" class="btn btn-primary"><?php echo $button_invoice; ?></a><a href="<?php echo $cancel; ?>" class="btn btn-primary"><?php echo $button_cancel; ?></a></div>
     </div>
     <div class="content">
       <div class="vtabs"><a href="#tab-order"><?php echo $tab_order; ?></a><a href="#tab-payment"><?php echo $tab_payment; ?></a>
@@ -376,7 +376,7 @@
           <tr>
             <td><?php echo $entry_comment; ?></td>
             <td><textarea name="comment" cols="40" rows="8" style="width: 99%"></textarea>
-              <div style="margin-top: 10px; text-align: right;"><a id="button-history" class="button"><?php echo $button_add_history; ?></a></div></td>
+              <div style="margin-top: 10px; text-align: right;"><a id="button-history" class="btn btn-primary"><?php echo $button_add_history; ?></a></div></td>
           </tr>
         </table>
       </div>

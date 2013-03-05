@@ -11,7 +11,7 @@
   <div class="box">
     <div class="heading">
       <h1><img src="view/image/download.png" alt="" /> <?php echo $heading_title; ?></h1>
-      <div class="buttons"><a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a><a href="<?php echo $cancel; ?>" class="button"><?php echo $button_cancel; ?></a></div>
+      <div class="buttons"><a onclick="$('#form').submit();" class="btn btn-primary"><?php echo $button_save; ?></a><a href="<?php echo $cancel; ?>" class="btn btn-primary"><?php echo $button_cancel; ?></a></div>
     </div>
     <div class="content">
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form">
@@ -28,7 +28,7 @@
           </tr>
           <tr>
             <td><?php echo $entry_filename; ?></td>
-            <td><input type="text" name="filename" value="<?php echo $filename; ?>" /> <a id="button-upload" class="button"><?php echo $button_upload; ?></a>
+            <td><input type="text" name="filename" value="<?php echo $filename; ?>" /> <a id="button-upload" class="btn btn-primary"><?php echo $button_upload; ?></a>
               <?php if ($error_filename) { ?>
               <span class="error"><?php echo $error_filename; ?></span>
               <?php } ?></td>

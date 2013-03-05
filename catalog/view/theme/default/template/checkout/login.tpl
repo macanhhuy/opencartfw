@@ -37,6 +37,6 @@
   <br />
   <a href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a><br />
   <br />
-  <input type="button" value="<?php echo $button_login; ?>" id="button-login" class="btn" /><br />
+  <input type="button" value="<?php echo $button_login; ?>" id="button-login" class="btn btn-primary" /><br />
   <br />
 </div>

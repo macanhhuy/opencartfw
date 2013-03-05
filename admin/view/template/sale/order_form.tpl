@@ -11,7 +11,7 @@
   <div class="box">
     <div class="heading">
       <h1><img src="view/image/order.png" alt="" /> <?php echo $heading_title; ?></h1>
-      <div class="buttons"><a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a><a href="<?php echo $cancel; ?>" class="button"><?php echo $button_cancel; ?></a></div>
+      <div class="buttons"><a onclick="$('#form').submit();" class="btn btn-primary"><?php echo $button_save; ?></a><a href="<?php echo $cancel; ?>" class="btn btn-primary"><?php echo $button_cancel; ?></a></div>
     </div>
     <div class="content">
       <div id="vtabs" class="vtabs"><a href="#tab-customer"><?php echo $tab_customer; ?></a><a href="#tab-payment"><?php echo $tab_payment; ?></a><a href="#tab-shipping"><?php echo $tab_shipping; ?></a><a href="#tab-product"><?php echo $tab_product; ?></a><a href="#tab-voucher"><?php echo $tab_voucher; ?></a><a href="#tab-total"><?php echo $tab_total; ?></a></div>
@@ -334,7 +334,7 @@
             <tfoot>
               <tr>
                 <td class="left">&nbsp;</td>
-                <td class="left"><a id="button-product" class="button"><?php echo $button_add_product; ?></a></td>
+                <td class="left"><a id="button-product" class="btn btn-primary"><?php echo $button_add_product; ?></a></td>
               </tr>
             </tfoot>
           </table>
@@ -426,7 +426,7 @@
             <tfoot>
               <tr>
                 <td class="left">&nbsp;</td>
-                <td class="left"><a id="button-voucher" class="button"><?php echo $button_add_voucher; ?></a></td>
+                <td class="left"><a id="button-voucher" class="btn btn-primary"><?php echo $button_add_voucher; ?></a></td>
               </tr>
             </tfoot>
           </table>
@@ -558,7 +558,7 @@
             <tfoot>
               <tr>
                 <td class="left">&nbsp;</td>
-                <td class="left"><a id="button-update" class="button"><?php echo $button_update_total; ?></a></td>
+                <td class="left"><a id="button-update" class="btn btn-primary"><?php echo $button_update_total; ?></a></td>
               </tr>
             </tfoot>
           </table>
@@ -1020,7 +1020,7 @@ $('input[name=\'product\']').autocomplete({
 					}
 					
 					html += option['name'] + '<br />';
-					html += '<a id="button-option-' + option['product_option_id'] + '" class="button"><?php echo $button_upload; ?></a>';
+					html += '<a id="button-option-' + option['product_option_id'] + '" class="btn btn-primary"><?php echo $button_upload; ?></a>';
 					html += '<input type="hidden" name="option[' + option['product_option_id'] + ']" value="' + option['option_value'] + '" />';
 					html += '</div>';
 					html += '<br />';

@@ -90,9 +90,9 @@
       </table>
     </fieldset>
     <div class="buttons">
-      <div class="left"><a href="<?php echo $back; ?>" class="button">Back</a></div>
+      <div class="left"><a href="<?php echo $back; ?>" class="btn btn-primary">Back</a></div>
       <div class="right">
-        <input type="submit" value="Continue" class="button" />
+        <input type="submit" value="Continue" class="btn btn-primary" />
       </div>
     </div>
   </form>

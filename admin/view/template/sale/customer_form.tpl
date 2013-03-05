@@ -11,7 +11,7 @@
   <div class="box">
     <div class="heading">
       <h1><img src="view/image/customer.png" alt="" /> <?php echo $heading_title; ?></h1>
-      <div class="buttons"><a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a><a href="<?php echo $cancel; ?>" class="button"><?php echo $button_cancel; ?></a></div>
+      <div class="buttons"><a onclick="$('#form').submit();" class="btn btn-primary"><?php echo $button_save; ?></a><a href="<?php echo $cancel; ?>" class="btn btn-primary"><?php echo $button_cancel; ?></a></div>
     </div>
     <div class="content">
       <div id="htabs" class="htabs"><a href="#tab-general"><?php echo $tab_general; ?></a>
@@ -217,7 +217,7 @@
               <td><textarea name="comment" cols="40" rows="8" style="width: 99%;"></textarea></td>
             </tr>
             <tr>
-              <td colspan="2" style="text-align: right;"><a id="button-history" class="button"><span><?php echo $button_add_history; ?></span></a></td>
+              <td colspan="2" style="text-align: right;"><a id="button-history" class="btn btn-primary"><span><?php echo $button_add_history; ?></span></a></td>
             </tr>
           </table>
         </div>
@@ -232,7 +232,7 @@
               <td><input type="text" name="amount" value="" /></td>
             </tr>
             <tr>
-              <td colspan="2" style="text-align: right;"><a id="button-transaction" class="button" onclick="addTransaction();"><span><?php echo $button_add_transaction; ?></span></a></td>
+              <td colspan="2" style="text-align: right;"><a id="button-transaction" class="btn btn-primary" onclick="addTransaction();"><span><?php echo $button_add_transaction; ?></span></a></td>
             </tr>
           </table>
           <div id="transaction"></div>
@@ -248,7 +248,7 @@
               <td><input type="text" name="points" value="" /></td>
             </tr>
             <tr>
-              <td colspan="2" style="text-align: right;"><a id="button-reward" class="button" onclick="addRewardPoints();"><span><?php echo $button_add_reward; ?></span></a></td>
+              <td colspan="2" style="text-align: right;"><a id="button-reward" class="btn btn-primary" onclick="addRewardPoints();"><span><?php echo $button_add_reward; ?></span></a></td>
             </tr>
           </table>
           <div id="reward"></div>

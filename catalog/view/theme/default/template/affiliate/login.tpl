@@ -17,7 +17,7 @@
   <div class="login-content">
     <div class="left">
       <h2><?php echo $text_new_affiliate; ?></h2>
-      <div class="content"><?php echo $text_register_account; ?> <a href="<?php echo $register; ?>" class="button"><?php echo $button_continue; ?></a></div>
+      <div class="content"><?php echo $text_register_account; ?> <a href="<?php echo $register; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
     </div>
     <div class="right">
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
@@ -33,7 +33,7 @@
           <br />
           <a href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a><br />
           <br />
-          <input type="submit" value="<?php echo $button_login; ?>" class="button" />
+          <input type="submit" value="<?php echo $button_login; ?>" class="btn btn-primary" />
           <?php if ($redirect) { ?>
           <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
           <?php } ?>

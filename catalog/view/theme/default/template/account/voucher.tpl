@@ -76,7 +76,7 @@
         <?php } else { ?>
         <input type="checkbox" name="agree" value="1" />
         <?php } ?>
-        <input type="submit" value="<?php echo $button_continue; ?>" class="btn" />
+        <input type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
       </div>
     </div>
   </form>

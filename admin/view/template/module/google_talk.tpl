@@ -11,7 +11,7 @@
   <div class="box">
     <div class="heading">
       <h1><img src="view/image/module.png" alt="" /> <?php echo $heading_title; ?></h1>
-      <div class="buttons"><a onclick="$('#form').submit();" class="button"><?php echo $button_save; ?></a><a href="<?php echo $cancel; ?>" class="button"><?php echo $button_cancel; ?></a></div>
+      <div class="buttons"><a onclick="$('#form').submit();" class="btn btn-primary"><?php echo $button_save; ?></a><a href="<?php echo $cancel; ?>" class="btn btn-primary"><?php echo $button_cancel; ?></a></div>
     </div>
     <div class="content">
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="form">
@@ -79,7 +79,7 @@
                   <?php } ?>
                 </select></td>
               <td class="right"><input type="text" name="google_talk_module[<?php echo $module_row; ?>][sort_order]" value="<?php echo $module['sort_order']; ?>" size="3" /></td>
-              <td class="left"><a onclick="$('#module-row<?php echo $module_row; ?>').remove();" class="button"><?php echo $button_remove; ?></a></td>
+              <td class="left"><a onclick="$('#module-row<?php echo $module_row; ?>').remove();" class="btn btn-primary"><?php echo $button_remove; ?></a></td>
             </tr>
           </tbody>
           <?php $module_row++; ?>
@@ -87,7 +87,7 @@
           <tfoot>
             <tr>
               <td colspan="4"></td>
-              <td class="left"><a onclick="addModule();" class="button"><?php echo $button_add_module; ?></a></td>
+              <td class="left"><a onclick="addModule();" class="btn btn-primary"><?php echo $button_add_module; ?></a></td>
             </tr>
           </tfoot>
         </table>
@@ -117,7 +117,7 @@ function addModule() {
     html += '      <option value="0"><?php echo $text_disabled; ?></option>';
     html += '    </select></td>';
 	html += '    <td class="right"><input type="text" name="google_talk_module[' + module_row + '][sort_order]" value="" size="3" /></td>';
-	html += '    <td class="left"><a onclick="$(\'#module-row' + module_row + '\').remove();" class="button"><?php echo $button_remove; ?></a></td>';
+	html += '    <td class="left"><a onclick="$(\'#module-row' + module_row + '\').remove();" class="btn btn-primary"><?php echo $button_remove; ?></a></td>';
 	html += '  </tr>';
 	html += '</tbody>';
 	

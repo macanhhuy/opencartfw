@@ -22,7 +22,7 @@
       </li>
       <?php } ?>
     </ul>
-    <a id="button-filter" class="button"><?php echo $button_filter; ?></a>
+    <a id="button-filter" class="btn btn-primary"><?php echo $button_filter; ?></a>
   </div>
 </div>
 <script type="text/javascript"><!--
