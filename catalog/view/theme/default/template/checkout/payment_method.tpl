@@ -19,7 +19,7 @@
 <br />
 <?php } ?>
 <b><?php echo $text_comments; ?></b>
-<textarea name="comment" rows="8" style="width: 98%;"><?php echo $comment; ?></textarea>
+<textarea name="comment" rows="8" class="span12"><?php echo $comment; ?></textarea>
 <br />
 <br />
 <?php if ($text_agree) { ?>
@@ -30,13 +30,13 @@
     <?php } else { ?>
     <input type="checkbox" name="agree" value="1" />
     <?php } ?>
-    <input type="button" value="<?php echo $button_continue; ?>" id="button-payment-method" class="button" />
+    <input type="button" value="<?php echo $button_continue; ?>" id="button-payment-method" class="btn btn-primary" />
   </div>
 </div>
 <?php } else { ?>
 <div class="buttons">
   <div class="right">
-    <input type="button" value="<?php echo $button_continue; ?>" id="button-payment-method" class="button" />
+    <input type="button" value="<?php echo $button_continue; ?>" id="button-payment-method" class="btn btn-primary" />
   </div>
 </div>
 <?php } ?>

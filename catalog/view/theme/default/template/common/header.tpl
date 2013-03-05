@@ -76,7 +76,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
     <div class="button-search"></div>
     <input type="text"  class="span12" name="search" placeholder="<?php echo $text_search; ?>" value="<?php echo $search; ?>" />
   </div>
-  
+
   </div>
 
   <div class="span4">
@@ -85,33 +85,57 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
   </div>
   <div class="row-fluid">
 
-  <div class="links pull-right"><a href="<?php echo $home; ?>" class="visible-phone"><i class="icon-home"></i></a>
+  <div class="links pull-right">
+    <a href="<?php echo $home; ?>" class="visible-phone" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="<?php echo $text_home; ?>"><i class="icon-home"></i></a>
     <a href="<?php echo $home; ?>" class="hidden-phone"><?php echo $text_home; ?></a><a href="<?php echo $wishlist; ?>" id="wishlist-total" class="hidden-phone"><?php echo $text_wishlist; ?></a><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></div>
   </div>
 
 </header>
 <?php if ($categories) { ?>
 <nav id="menu" class="container">
-  <ul>
+ <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container" style="width: auto;">
+      <button class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" title="" rel="tooltip" data-placement="left" data-original-title="Menu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="nav-collapse">
+          <ul class="nav">
     <?php foreach ($categories as $category) { ?>
-    <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
       <?php if ($category['children']) { ?>
-      <div>
+      <li class="dropdown">
+            <a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?><b class="caret"></b></a>
+             <ul class="dropdown-menu pull-right">
+
         <?php for ($i = 0; $i < count($category['children']);) { ?>
-        <ul>
+        <div>
           <?php $j = $i + ceil(count($category['children']) / $category['column']); ?>
           <?php for (; $i < $j; $i++) { ?>
           <?php if (isset($category['children'][$i])) { ?>
           <li><a href="<?php echo $category['children'][$i]['href']; ?>"><?php echo $category['children'][$i]['name']; ?></a></li>
           <?php } ?>
           <?php } ?>
-        </ul>
-        <?php } ?>
+
       </div>
-      <?php } ?>
+        <?php } ?>
+         </ul>
+       <?php }
+      else {
+        ?>
+        <li>
+            <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
+        <?php
+      } ?>
     </li>
     <?php } ?>
   </ul>
+      </div><!-- /.nav-collapse -->
+    </div>
+  </div><!-- /navbar-inner -->
+
 </nav>
 <?php } ?>
+<section id="wrap-content" class="container">
 <div id="notification"></div>

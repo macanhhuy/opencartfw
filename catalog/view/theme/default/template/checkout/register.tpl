@@ -1,4 +1,4 @@
-<div class="left">
+<div class="left span6">
   <h2><?php echo $text_your_details; ?></h2>
   <span class="required">*</span> <?php echo $entry_firstname; ?><br />
   <input type="text" name="firstname" value="" class="large-field" />
@@ -31,7 +31,7 @@
   <br />
   <br />
 </div>
-<div class="right">
+<div class="right span6">
   <h2><?php echo $text_your_address; ?></h2>
   <?php echo $entry_company; ?><br />
   <input type="text" name="company" value="" class="large-field" />
@@ -114,13 +114,13 @@
 <div class="buttons">
   <div class="right"><?php echo $text_agree; ?>
     <input type="checkbox" name="agree" value="1" />
-    <input type="button" value="<?php echo $button_continue; ?>" id="button-register" class="button" />
+    <input type="button" value="<?php echo $button_continue; ?>" id="button-register" class="btn" />
   </div>
 </div>
 <?php } else { ?>
 <div class="buttons">
   <div class="right">
-    <input type="button" value="<?php echo $button_continue; ?>" id="button-register" class="button" />
+    <input type="button" value="<?php echo $button_continue; ?>" id="button-register" class="btn" />
   </div>
 </div>
 <?php } ?>

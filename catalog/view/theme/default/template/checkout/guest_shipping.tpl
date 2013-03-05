@@ -48,7 +48,7 @@
 </table>
 <br />
 <div class="buttons">
-  <div class="right"><input type="button" value="<?php echo $button_continue; ?>" id="button-guest-shipping" class="button" /></div>
+  <div class="right"><input type="button" value="<?php echo $button_continue; ?>" id="button-guest-shipping" class="btn btn-primary" /></div>
 </div>
 <script type="text/javascript"><!--
 $('#shipping-address select[name=\'country_id\']').bind('change', function() {

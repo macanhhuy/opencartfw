@@ -1,4 +1,4 @@
-<div class="left">
+<div class="left span6">
   <h2><?php echo $text_your_details; ?></h2>
   <span class="required">*</span> <?php echo $entry_firstname; ?><br />
   <input type="text" name="firstname" value="<?php echo $firstname; ?>" class="large-field" />
@@ -21,7 +21,7 @@
   <br />
   <br />
 </div>
-<div class="right">
+<div class="right span6">
   <h2><?php echo $text_your_address; ?></h2>
   <?php echo $entry_company; ?><br />
   <input type="text" name="company" value="<?php echo $company; ?>" class="large-field" />
@@ -102,7 +102,7 @@
 <?php } ?>
 <div class="buttons">
   <div class="right">
-    <input type="button" value="<?php echo $button_continue; ?>" id="button-guest" class="button" />
+    <input type="button" value="<?php echo $button_continue; ?>" id="button-guest" class="btn btn-primary" />
   </div>
 </div>
 <script type="text/javascript"><!--

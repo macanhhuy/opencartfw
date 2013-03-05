@@ -12,9 +12,10 @@ var params = {
 
 };
 
-
 $(document).ready(function() {
-
+     $("a[data-toggle=tooltip], [rel=tooltip]").tooltip();
+     $("#column-left + #column-right + #content").addClass("span6");
+     $("#column-left + #content").addClass("span9");
 	var init = function(){
 
 		/* Equal Height */
@@ -120,11 +121,19 @@ $(document).ready(function() {
 
 		if(myWidth < 980) {
 
-			$("#footer h3").click(function () {
+			$("#footer h3.header").click(function () {
 
 					$(this).toggleClass("active");
 					$(this).parent().find("ul").slideToggle('medium');
 			});
+
+			$("#column-left .box .box-heading").click(function () {
+
+					$(this).toggleClass("active");
+					$(this).parent().find(".box-content").slideToggle('medium');
+			});
+
+
 		}
 
 		$('#myCarousel .item:first').addClass('active');
