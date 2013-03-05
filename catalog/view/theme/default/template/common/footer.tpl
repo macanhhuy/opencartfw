@@ -1,4 +1,4 @@
-</section>
+</div></section>
 <footer id="footer">
   <div class="container">
     <div class="row-fluid">

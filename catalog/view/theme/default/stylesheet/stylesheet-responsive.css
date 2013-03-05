@@ -256,7 +256,7 @@
 					}
 
 				.nav-collapse.in {
-					
+
 				}
 
 				.nav-collapse .dropdown-menu { display: block; margin: 0; }
@@ -378,20 +378,27 @@
 
 		/* Column-left
 		-------------------------------------------------- */
-		#column-left .box .box-heading{
+		.box .box-heading{
 			border-radius: 4px;
 			line-height: 25px;
 		}
-		#column-left .box .box-heading.active{
+		.box .box-heading.active{
 			border-radius: 4px 4px 0 0;
-			
+
 		}
 
 
-		#column-left .box .box-content{
+		.box .box-content{
 			display: none;
 		}
 
+		h3.header .icon-plus {
+			margin-top: 14px;
+			margin-right: 14px;
+		}
+		.box-heading .icon-plus{
+			margin-top: 5px;
+		}
 		/* Other lists
 		-------------------------------------------------- */
 
@@ -435,8 +442,6 @@
 				filter: progid:dximagetransform.microsoft.gradient(enabled=false);
 				border: 1px solid #CCC;
 
-
-				padding: 8px;
 				margin: 0;
 
 				-webkit-border-radius: 2px;

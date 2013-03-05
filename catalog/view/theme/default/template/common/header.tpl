@@ -139,3 +139,4 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 <?php } ?>
 <section id="wrap-content" class="container">
 <div id="notification"></div>
+<div class="row-fluid">

@@ -13,6 +13,8 @@ var params = {
 };
 
 $(document).ready(function() {
+	$(".box .box-heading i, #footer h3.header i").toggleClass('icon-plus');
+
      $("a[data-toggle=tooltip], [rel=tooltip]").tooltip();
      $("#column-left + #column-right + #content").addClass("span6");
      $("#column-left + #content").addClass("span9");
@@ -122,13 +124,13 @@ $(document).ready(function() {
 		if(myWidth < 980) {
 
 			$("#footer h3.header").click(function () {
-
+					$(this).find('i').toggleClass("icon-minus");
 					$(this).toggleClass("active");
 					$(this).parent().find("ul").slideToggle('medium');
 			});
-
-			$("#column-left .box .box-heading").click(function () {
-
+			$(".box .box-heading, #footer h3.header").append('<i class="icon-plus pull-right"></i>');
+			$(".box .box-heading").click(function () {
+					$(this).find('i').toggleClass("icon-minus");
 					$(this).toggleClass("active");
 					$(this).parent().find(".box-content").slideToggle('medium');
 			});
