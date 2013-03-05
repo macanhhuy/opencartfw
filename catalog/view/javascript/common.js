@@ -124,32 +124,19 @@ $(document).ready(function() {
 
 			$("#footer h3.header").click(function () {
 					$(this).find('i').toggleClass("icon-minus");
-
+					$(this).toggleClass("active");
+					$(this).parent().find("ul").slideToggle('medium');
 			});
 			$(".box .box-heading, #footer h3.header").append('<i class="icon-plus pull-right"></i>');
 			$(".box .box-heading").click(function () {
 					$(this).find('i').toggleClass("icon-minus");
-
-
-			});
-
-
-		}
-			if(myWidth < 800) {
-
-			$("#footer h3.header").click(function () {
-					$(this).find('i').toggleClass("icon-minus");
-					$(this).toggleClass("active");
-					$(this).parent().find("ul").slideToggle('medium');
-			});
-
-			$(".box .box-heading").click(function () {
 					$(this).toggleClass("active");
 					$(this).parent().find(".box-content").slideToggle('medium');
 			});
 
 
 		}
+
 		$('#myCarousel .item:first').addClass('active');
 
 		// Tooltips
