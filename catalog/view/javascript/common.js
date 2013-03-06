@@ -122,10 +122,14 @@ $(document).ready(function() {
 		    myHeight = document.documentElement.clientHeight;
 		}
 
+<<<<<<< HEAD
 		if(myWidth < 767){
 
 			$(".box .box-heading, #footer h3.header").append('<i class="icon-plus pull-right visible-phone"></i>');
 			$(".box .box-heading, #footer h3.header").addClass('mobile');
+=======
+		if(myWidth < 776) {
+>>>>>>> c6da355cf9bda2873bfc35d6768ca406fc81fb1b
 
 
 		}
