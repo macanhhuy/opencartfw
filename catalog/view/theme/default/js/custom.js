@@ -1,8 +1,3 @@
-/*
-Theme Name: Sellegance
-Version: 1.4.4.1
-*/
-
 $(document).ready(function(){
 
 	/* ---------------------------------------------------------------------- */
@@ -142,18 +137,7 @@ $(document).ready(function(){
 	/*	Footer menu
 	/* ---------------------------------------------------------------------- */
 
-		$(".column .header").click(function () {
-
-			$screensize = $(window).width();
-
-			if ($screensize < 767) {
-				$(this).toggleClass("active");
-				$(this).parent().find(".content").slideToggle('medium');
-			}
-
-		});
-
-
+	
 	/* ---------------------------------------------------------------------- */
 	/*	Scroll to top
 	/* ---------------------------------------------------------------------- */
@@ -186,7 +170,7 @@ $(document).ready(function(){
 	/*	Tooltips
 	/* ---------------------------------------------------------------------- */
 
-		$('.tooltp').tooltip();
+		$("a[data-toggle=tooltip], [rel=tooltip]").tooltip();
 
 
 	/* ---------------------------------------------------------------------- */
@@ -244,15 +228,15 @@ $(document).ready(function(){
 	/*	Banners
 	/* ---------------------------------------------------------------------- */
 
-		var banner = function() {
-			$('.banner').cycle({
-				before: function(current, next) {
-					$(next).parent().height($(next).outerHeight());
-				}
-			});
-		}
+		// var banner = function() {
+		// 	$('.banner').cycle({
+		// 		before: function(current, next) {
+		// 			$(next).parent().height($(next).outerHeight());
+		// 		}
+		// 	});
+		// }
 
-		setTimeout(banner, 2000);
+		// setTimeout(banner, 2000);
 
 	/* ---------------------------------------------------------------------- */
 	/*	Alert boxes
@@ -271,51 +255,51 @@ $(document).ready(function(){
 	/*	Same height for all grid boxes
 	/* ---------------------------------------------------------------------- */
 
-		// Adjust boxes height when the page is completely loaded
-		$(window).load(function(){
-			doAdjust = true;
-			previousWidth = 0;
-			adjustBoxHeights();
+		// // Adjust boxes height when the page is completely loaded
+		// $(window).load(function(){
+		// 	doAdjust = true;
+		// 	previousWidth = 0;
+		// 	adjustBoxHeights();
 
-		});
+		// });
 
-		// Raise doAdjust flag every time the window width changes
+		// // Raise doAdjust flag every time the window width changes
 
-		$(window).resize(function() {
-			var currentWidth = $(window).width();
-			if (previousWidth != currentWidth) {
-				doAdjust = true;
-			}
-			previousWidth = currentWidth;
-		})
+		// $(window).resize(function() {
+		// 	var currentWidth = $(window).width();
+		// 	if (previousWidth != currentWidth) {
+		// 		doAdjust = true;
+		// 	}
+		// 	previousWidth = currentWidth;
+		// })
 
-		// Run every half second
+		// // Run every half second
 
-		$(function() {
-			setInterval('maybeAdjust()', 500);
-		});
+		// $(function() {
+		// 	setInterval('maybeAdjust()', 500);
+		// });
 
-		// Check the doAdjust flag
+		// // Check the doAdjust flag
 
-		function maybeAdjust() {
-			if (doAdjust) {
-				adjustBoxHeights();
-				doAdjust = false;
-			}
-		}
+		// function maybeAdjust() {
+		// 	if (doAdjust) {
+		// 		adjustBoxHeights();
+		// 		doAdjust = false;
+		// 	}
+		// }
 
-		// Loop through the DIVs and find the height of the tallest one, then loop again and set them all to that height
+		// // Loop through the DIVs and find the height of the tallest one, then loop again and set them all to that height
 
-		function adjustBoxHeights() {
-			var maxHeight = 0;
-			$('.product-grid > div, .content-top .product-box > div, .content-bottom .product-box > div').each(function(){
-				$(this).height('auto');
-				if (maxHeight < $(this).height()) {maxHeight = $(this).height()}
-			});
-			$('.product-grid > div, .content-top .product-box > div, .content-bottom .product-box > div').each(function(){
-				$(this).height(maxHeight);
-			});
-		}
+		// function adjustBoxHeights() {
+		// 	var maxHeight = 0;
+		// 	$('.product-grid > div, .content-top .product-box > div, .content-bottom .product-box > div').each(function(){
+		// 		$(this).height('auto');
+		// 		if (maxHeight < $(this).height()) {maxHeight = $(this).height()}
+		// 	});
+		// 	$('.product-grid > div, .content-top .product-box > div, .content-bottom .product-box > div').each(function(){
+		// 		$(this).height(maxHeight);
+		// 	});
+		// }
 
 
 	function getURLVar(urlVarName) {
@@ -343,95 +327,15 @@ $(document).ready(function(){
 	/*	Add to Cart
 	/* ---------------------------------------------------------------------- */
 
-		function addToCart(product_id, quantity) {
-			quantity = typeof(quantity) != 'undefined' ? quantity : 1;
-
-			$.ajax({
-				url: 'index.php?route=checkout/cart/add',
-				type: 'post',
-				data: 'product_id=' + product_id + '&quantity=' + quantity,
-				dataType: 'json',
-				success: function(json) {
-					$('.success, .warning, .attention, .information, .error').remove();
-
-					if (json['redirect']) {
-						location = json['redirect'];
-					}
-
-					if (json['success']) {
-
-						$('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/sellegance/images/close.png" alt="" class="close" /></div>');
-
-						$('.success').fadeIn('slow');
-
-						$('html, body').animate({ scrollTop: 0 }, 'slow');
-
-						/*$.colorbox({
-							html:'<p class="success_message" style="margin:20px 10px 10px; text-align:center;">' + json['success'] + '</p><div class="buttons"><a href="#"><span class="button button-mini">Continue shopping</span></a> <a href="index.php?route=checkout/cart"><span class="button button-mini button-cart">Shopping Cart</span></a> </div>',overlayClose: true,
-							opacity: 0.5,
-							maxHeight: 560,
-							maxWidth: 560,
-							width:'100%'
-						});*/
-
-						$('#cart-total').html(json['total']);
-
-					}
-				}
-			});
-		}
 
 	/* ---------------------------------------------------------------------- */
 	/*	Add to Wishlist
 	/* ---------------------------------------------------------------------- */
 
-		function addToWishList(product_id) {
-			$.ajax({
-				url: 'index.php?route=account/wishlist/add',
-				type: 'post',
-				data: 'product_id=' + product_id,
-				dataType: 'json',
-				success: function(json) {
-					$('.success, .warning, .attention, .information').remove();
-
-					if (json['success']) {
-						$('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/sellegance/images/close.png" alt="" class="close" /></div>');
-
-						$('.success').fadeIn('slow');
-
-						$('#wishlist-total').html(json['total']);
-
-						$('html, body').animate({ scrollTop: 0 }, 'slow');
-					}
-				}
-			});
-		}
 
 	/* ---------------------------------------------------------------------- */
 	/*	Add to Compare
 	/* ---------------------------------------------------------------------- */
-
-		function addToCompare(product_id) {
-			$.ajax({
-				url: 'index.php?route=product/compare/add',
-				type: 'post',
-				data: 'product_id=' + product_id,
-				dataType: 'json',
-				success: function(json) {
-					$('.success, .warning, .attention, .information').remove();
-
-					if (json['success']) {
-						$('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/sellegance/images/close.png" alt="" class="close" /></div>');
-
-						$('.success').fadeIn('slow');
-
-						$('#compare-total').html(json['total']);
-
-						$('html, body').animate({ scrollTop: 0 }, 'slow');
-					}
-				}
-			});
-		}
 
 	/* ---------------------------------------------------------------------- */
 	/*	jquery.cookie.js Apache mod_security blocks the file in some servers.
@@ -481,159 +385,6 @@ $(document).ready(function(){
 	/* ---------------------------------------------------------------------- */
 	/*	Grid/List view
 	/* ---------------------------------------------------------------------- */
-
-		function display(view) {
-
-			if (view == 'list') {
-
-				$('#list').addClass('active');
-				$('#grid').removeClass('active');
-
-				$('.product-grid').toggleClass('product-grid product-list');
-
-				$('.product-list > div').each(function(index, element) {
-
-					$(this).removeClass('alpha alpha3 alpha4 alpha5 odd grid-box');
-
-					$(this).addClass('product-row');
-					$(this).height('auto');
-
-					var special = $(element).find('.onsale').html();
-
-					if (special != null) {
-						html = '<span class="onsale">' + special  + '</span>';
-						html += '<div class="row-fluid">';
-					} else {
-						html = '<div class="row-fluid">';
-					}
-
-					var image = $(element).find('.image').html();
-
-					if (image != null) {
-						html += '<div class="image span3">' + image + '</div>';
-					} else {
-						html += '<div class="image span3">&nbsp;</div>';
-					}
-
-					html += '<div class="name-desc span4">';
-
-					html += '<div class="name">' + $(element).find('.name').html() + '</div>';
-					var rating = $(element).find('.rating').html();
-
-					if (rating != null) {
-						html += '<div class="rating">' + rating + '</div>';
-					}
-					html += '<div class="description">' + $(element).find('.description').html() + '</div>';
-
-					html += '</div>';
-
-					var price = $(element).find('.price').html();
-
-					if (price != null) {
-						html += '<div class="price span2">' + price  + '</div>';
-					} else {
-						html += '<div class="price span2">&nbsp;</div>';
-					}
-
-					html += '<div class="actions span3">';
-					html += '  <div class="cart">' + $(element).find('.cart').html() + '</div>';
-
-					var wishlist = $(element).find('.wishlist').html();
-					if (wishlist != null) {
-						html += '  <div class="wishlist">' + wishlist + '</div>';
-					}
-
-					var compare = $(element).find('.compare').html();
-					if (compare != null) {
-						html += '  <div class="compare">' + compare + '</div>';
-					}
-
-					html += '</div>';
-
-					html += '</div>';
-
-
-					$(element).html(html);
-				});
-
-				$.cookie('display', 'list');
-
-			} else {
-
-				$('#grid').addClass('active');
-				$('#list').removeClass('active');
-
-				$('.product-list').toggleClass('product-list product-grid');
-
-				$('.product-grid > div').each(function(index, element) {
-
-					$(this).addClass('grid-box');
-
-					html = '';
-
-					var image = $(element).find('.image').html();
-
-					html += '<div class="inner">';
-
-					var special = $(element).find('.onsale').html();
-
-					if (special != null) {
-						html += '<span class="onsale">' + special  + '</span>';
-					}
-
-					if (image != null) {
-						html += '<div class="image">' + image + '</div>';
-					}
-
-					html += '<div class="name">' + $(element).find('.name').html() + '</div>';
-
-					html += '<div class="description">' + $(element).find('.description').html() + '</div>';
-
-					var price = $(element).find('.price').html();
-
-					if (price != null) {
-						html += '<div class="price">' + price  + '</div>';
-					}
-
-					html += '<div class="cart">' + $(element).find('.cart').html() + '</div>';
-
-					var rating = $(element).find('.rating').html();
-
-					if (rating != null) {
-						html += '<div class="rating">' + rating + '</div>';
-					}
-
-					var wishlist = $(element).find('.wishlist').html();
-					if (wishlist != null) {
-						html += '  <div class="wishlist">' + wishlist + '</div>';
-					}
-
-					var compare = $(element).find('.compare').html();
-					if (compare != null) {
-						html += '  <div class="compare">' + compare + '</div>';
-					}
-
-					html += '</div>';
-
-					$(element).html(html);
-
-				});
-
-				$.cookie('display', 'grid');
-
-				adjustBoxHeights();
-
-			}
-
-			$('.tooltp').tooltip();
-
-		}
-
-		view = $.cookie('display');
-
-		if (view=='list') {	display(view);	}
-
-
 
 	/* ---------------------------------------------------------------------- */
 	/*	Responsive video embeds

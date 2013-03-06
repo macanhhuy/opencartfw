@@ -29,7 +29,10 @@
 <script type="text/javascript" src="catalog/view/theme/default/js/responsive.js"></script>
 <link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
 <script type="text/javascript" src="catalog/view/javascript/common.js"></script>
-<?php foreach ($scripts as $script) { ?>
+<script type="text/javascript" src="catalog/view/theme/default/js/custom.js"></script>
+<script type="text/javascript" src="catalog/view/theme/default/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="catalog/view/theme/default/js/jquery.ui.totop.js"></script>
+<script type="text/javascript" src="catalog/view/theme/default/js/cloud-zoom.1.0.3-min.js"></script><?php foreach ($scripts as $script) { ?>
 <script type="text/javascript" src="<?php echo $script; ?>"></script>
 <?php } ?>
 <!--[if IE 7]>
@@ -86,7 +89,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
   <div class="row-fluid">
 
   <div class="links pull-right">
-    <a href="<?php echo $home; ?>" class="visible-phone" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="<?php echo $text_home; ?>"><i class="icon-home"></i></a>
+    <a href="<?php echo $home; ?>" class="hidden-desktop" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="<?php echo $text_home; ?>"><i class="icon-home"></i></a>
     <a href="<?php echo $home; ?>" class="hidden-phone"><?php echo $text_home; ?></a><a href="<?php echo $wishlist; ?>" id="wishlist-total" class="hidden-phone"><?php echo $text_wishlist; ?></a><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a><a href="<?php echo $shopping_cart; ?>"><?php echo $text_shopping_cart; ?></a><a href="<?php echo $checkout; ?>"><?php echo $text_checkout; ?></a></div>
   </div>
 
@@ -103,11 +106,18 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
       </button>
       <div class="nav-collapse">
           <ul class="nav">
-    <?php foreach ($categories as $category) { ?>
+    <?php $i=0; foreach ($categories as $category) { ?>
+
       <?php if ($category['children']) { ?>
       <li class="dropdown">
             <a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?><b class="caret"></b></a>
-             <ul class="dropdown-menu pull-right">
+             <?php if($i==0){
+              echo '<ul class="dropdown-menu pull-left">';
+            }
+            else {
+              echo '<ul class="dropdown-menu pull-right">';
+            }
+            ?>
 
         <?php for ($i = 0; $i < count($category['children']);) { ?>
         <div>
@@ -129,7 +139,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
         <?php
       } ?>
     </li>
-    <?php } ?>
+    <?php $i++; } ?>
   </ul>
       </div><!-- /.nav-collapse -->
     </div>

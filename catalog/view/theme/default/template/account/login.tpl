@@ -3,7 +3,7 @@
 <div class="success"><?php echo $success; ?></div>
 <?php } ?>
 <?php if ($error_warning) { ?>
-<div class="warning"><?php echo $error_warning; ?></div>
+<div class="warning" class="span9"><?php echo $error_warning; ?></div>
 <?php } ?>
 <?php echo $column_left; ?><?php echo $column_right; ?>
 <div id="content"><?php echo $content_top; ?>

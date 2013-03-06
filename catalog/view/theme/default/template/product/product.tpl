@@ -16,12 +16,19 @@
         <?php if ($thumb || $images) { ?>
         <div class="left span5">
           <?php if ($thumb) { ?>
-          <div class="image span12"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
+          <div class="image span12">
+            
+            <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class="colorbox cloud-zoom" id='zoom1' rel="adjustX: 10, adjustY:-4, tint:false,tintOpacity:0.2, zoomWidth:360, position:'right', showTitle:false"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a>
+
+
+            <p><a href="<?php echo $popup; ?>" id="zoom-image" title="<?php echo $heading_title; ?>" class="colorbox"><span><i class="icon-zoom-in"></i> zoom</span></a>
+            </p>
+          </div>
           <?php } ?>
           <?php if ($images) { ?>
           <div class="image-additional">
             <?php foreach ($images as $image) { ?>
-            <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="colorbox"><img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+            <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="cloud-zoom-gallery" rel="useZoom: 'zoom1', smallImage: '<?php echo $image['popup']; ?>' "><img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
             <?php } ?>
           </div>
           <?php } ?>
@@ -245,9 +252,7 @@
         <?php if ($review_status) { ?>
         <a href="#tab-review"><?php echo $tab_review; ?></a>
         <?php } ?>
-        <?php if ($products) { ?>
-        <a href="#tab-related"><?php echo $tab_related; ?> (<?php echo count($products); ?>)</a>
-        <?php } ?>
+        
       </div>
       <div id="tab-description" class="tab-content"><?php echo $description; ?></div>
       <?php if ($attribute_groups) { ?>
@@ -305,11 +310,30 @@
         </div>
       </div>
       <?php } ?>
-      <?php if ($products) { ?>
-      <div id="tab-related" class="tab-content">
-        <div class="box-product">
+     
+      <?php if ($tags) { ?>
+      <div class="tags"><b><?php echo $text_tags; ?></b>
+        <?php for ($i = 0; $i < count($tags); $i++) { ?>
+        <?php if ($i < (count($tags) - 1)) { ?>
+        <a href="<?php echo $tags[$i]['href']; ?>"><?php echo $tags[$i]['tag']; ?></a>,
+        <?php } else { ?>
+        <a href="<?php echo $tags[$i]['href']; ?>"><?php echo $tags[$i]['tag']; ?></a>
+        <?php } ?>
+        <?php } ?>
+      </div>
+      <?php } ?>
+      </div>
+      <!--CONTENT BOTTOM-->
+      <div class="row-fluid">
+         <?php if ($products) { ?>
+   
+      <div class="box">
+        <div class="box-heading">
+          <?php echo $tab_related; ?> (<?php echo count($products); ?>)
+        </div>
+        <div class="box-product row-fluid">
           <?php foreach ($products as $product) { ?>
-          <div>
+          <div class="span3">
             <?php if ($product['thumb']) { ?>
             <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" /></a></div>
             <?php } ?>
@@ -331,20 +355,6 @@
         </div>
       </div>
       <?php } ?>
-      <?php if ($tags) { ?>
-      <div class="tags"><b><?php echo $text_tags; ?></b>
-        <?php for ($i = 0; $i < count($tags); $i++) { ?>
-        <?php if ($i < (count($tags) - 1)) { ?>
-        <a href="<?php echo $tags[$i]['href']; ?>"><?php echo $tags[$i]['tag']; ?></a>,
-        <?php } else { ?>
-        <a href="<?php echo $tags[$i]['href']; ?>"><?php echo $tags[$i]['tag']; ?></a>
-        <?php } ?>
-        <?php } ?>
-      </div>
-      <?php } ?>
-      </div>
-      <!--CONTENT BOTTOM-->
-      <div class="row-fluid">
       <?php echo $content_bottom; ?>
       </div>
     </article>

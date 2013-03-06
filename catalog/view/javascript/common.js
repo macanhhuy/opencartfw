@@ -13,11 +13,12 @@ var params = {
 };
 
 $(document).ready(function() {
-	$(".box .box-heading i, #footer h3.header i").toggleClass('icon-plus');
 
-     $("a[data-toggle=tooltip], [rel=tooltip]").tooltip();
+
+     
      $("#column-left + #column-right + #content").addClass("span6");
      $("#column-left + #content").addClass("span9");
+     $(".box .box-heading i, #footer h3.header i").toggleClass('icon-plus');
 	var init = function(){
 
 		/* Equal Height */
@@ -121,27 +122,52 @@ $(document).ready(function() {
 		    myHeight = document.documentElement.clientHeight;
 		}
 
-		if(myWidth < 980) {
+		if(myWidth < 767){
 
-			$("#footer h3.header").click(function () {
+			$(".box .box-heading, #footer h3.header").append('<i class="icon-plus pull-right visible-phone"></i>');
+			$(".box .box-heading, #footer h3.header").addClass('mobile');
+
+
+		}
+				$("#footer h3.header.mobile").live('click',
+				function () {
 					$(this).find('i').toggleClass("icon-minus");
 					$(this).toggleClass("active");
 					$(this).parent().find("ul").slideToggle('medium');
 			});
-			$(".box .box-heading, #footer h3.header").append('<i class="icon-plus pull-right"></i>');
-			$(".box .box-heading").click(function () {
+					$(".box .box-heading.mobile").live('click',
+				function () {
 					$(this).find('i').toggleClass("icon-minus");
 					$(this).toggleClass("active");
-					$(this).parent().find(".box-content").slideToggle('medium');
+					$(this).parent().find(".box-content, .box-product").slideToggle('medium');
 			});
+
+		$(window).on('resize', function() {
+			console.log(document.documentElement.clientWidth);
+				if(document.documentElement.clientWidth > 767) {
+
+
+			$(".box .box-heading, #footer h3.header").find('i').remove();
+			$(".box .box-heading, #footer h3.header").removeClass('mobile');
+			$(".box-content, .box-product").show();
 
 
 		}
+		if(document.documentElement.clientWidth < 767) {
+			$(".box-content, .box-product").hide();
+
+			$(".box .box-heading, #footer h3.header").find('i').remove();
+			$(".box .box-heading, #footer h3.header").addClass('mobile');
+			$(".box .box-heading, #footer h3.header").append('<i class="icon-plus pull-right visible-phone"></i>');
+
+
+
+		}
+		});
 
 		$('#myCarousel .item:first').addClass('active');
 
-		// Tooltips
-	    $('.socialMedia a').tooltip();
+	
 
 	    //email subscription
 		if ($('#email').length) {
@@ -369,7 +395,6 @@ $(document).ready(function() {
 
 			// Window resize
 			$(window).on('resize', function() {
-
 				var timer = window.setTimeout( function() {
 					window.clearTimeout( timer );
 					adjustCarousel();
@@ -384,6 +409,7 @@ $(document).ready(function() {
 	/* end Projects Carousel & Post Carousel */
 
 });
+
 
 function addToCart(product_id, quantity) {
 	quantity = typeof(quantity) != 'undefined' ? quantity : 1;

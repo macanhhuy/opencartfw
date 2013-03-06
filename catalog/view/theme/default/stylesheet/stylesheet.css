@@ -84,7 +84,7 @@ label {
 
 }
 #column-right + #content {
-
+	margin-left: 0;
 }
 /* header */
 #header {
@@ -863,6 +863,10 @@ ul.box-filter > li ul {
 	width: 100%;
 	overflow: auto;
 }
+.product-grid > div{
+	float: left;
+}
+
 .product-grid > div > div{
 	text-align: center;
 }
@@ -917,14 +921,14 @@ ul.box-filter > li ul {
 	color: #333333;
 	text-decoration: none;
 	display: block;
-	
+
 }
 .product-grid .compare a {
 	color: #333333;
 	text-decoration: none;
-	
+
 	display: block;
-	
+
 }
 /* Product */
 .product-info {
@@ -1561,4 +1565,226 @@ text-align: center;
 border: 1px solid #f2f2f2;
 margin: 5px 0;
 padding: 10px;
+}
+.box-product .span3:nth-child(5n), .product-grid .span3:nth-child(5n) {
+margin-left: 0;
+}
+
+	 /* Camera Slideshow */
+
+		.camera_wrap .camera_pag ul.camera_pag_ul {
+			text-align: center;
+		}
+		.camera_wrap .camera_pag ul.camera_pag_ul li {
+			margin: 10px 5px;
+		}
+		.camera_wrap .camera_pag ul.camera_pag_ul li.cameracurrent > span {
+			background: #DD4B39;
+		}
+		.camera_wrap {
+			margin-bottom: 10px !important;
+		}
+		.camera_pag {
+			margin-top: -38px;
+		}
+
+	/*	Cloud zoom
+	-------------------------------------------------- */
+
+		/* This is the moving lens square underneath the mouse pointer. */
+		.cloud-zoom-lens {counter-reset:
+			border: 4px solid #888;
+			margin:-4px;	/* Set this to minus the border thickness. */
+			background-color:#fff;
+			cursor:move;
+		}
+
+		/* This is for the title text. */
+		.cloud-zoom-title {
+			font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+			position:absolute !important;
+			background-color:#000;
+			color:#fff;
+			padding:3px;
+			width:100%;
+			text-align:center;
+			font-weight:bold;
+			font-size:10px;
+			top:0px;
+		}
+
+		/* This is the zoom window. */
+		.cloud-zoom-big {
+			border:4px solid #ccc;
+			overflow:hidden;
+		}
+
+		/* This is the loading message. */
+		.cloud-zoom-loading {
+			color:white;
+			background:#222;
+			padding:3px;
+			border:1px solid #000;
+		}
+
+	/* UItoTop (http://www.mattvarone.com/web-design/uitotop-jquery-plugin/)
+	-------------------------------------------------- */
+
+		#toTop {
+			display:none;
+			text-decoration:none;
+			position:fixed;
+			bottom:10px;
+			right:10px;
+			overflow:hidden;
+			width:51px;
+			height:51px;
+			border:none;
+			text-indent:-999px;
+			background:url("../images/ui.totop.png") no-repeat left top;
+		}
+
+			#toTopHover {
+				background:url("../images/ui.totop.png") no-repeat left -51px;
+				width:51px;
+				height:51px;
+				display:block;
+				overflow:hidden;
+				float:left;
+				opacity: 0;
+				-moz-opacity: 0;
+				filter:alpha(opacity=0);
+			}
+
+			#toTop:active, #toTop:focus {
+				outline:none;
+			}
+
+
+/* -------------------------------------------------- */
+/*	jQuery Styles
+/* -------------------------------------------------- */
+
+
+	html .ui-corner-all {
+		-moz-border-radius: 0;
+		-webkit-border-radius: 0;
+		-khtml-border-radius: 0;
+		border-radius: 0;
+	}
+	html .ui-widget-header {
+		background:none;
+		border-color:#CCC;
+		border-width:0 0 1px;
+		color:#DD4B39;
+	}
+		html .ui-widget-header .ui-icon {
+			background-image: url("../images/ui-icons_888888_256x240.png");
+		}
+		html .ui-datepicker table thead th {
+			color:#666;
+			font-weight:normal;
+			font-size:0.9em;
+			text-transform:uppercase;
+			padding:0.3em 0;
+		}
+		.ui-datepicker td { padding:0; }
+			.ui-datepicker td a { padding:0; }
+		.ui-datepicker tbody tr + tr td { border-top: 1px solid #EEE; }
+		.ui-datepicker tbody td + td { border-left: 1px solid #EEE; }
+
+	html .ui-state-default,
+	html .ui-widget-content .ui-state-default,
+	html .ui-widget-header .ui-state-default {
+		border:1px solid #FFF;
+		background:none;
+		text-align:center;
+		color:#333;
+	}
+	html .ui-state-highlight,
+	html .ui-widget-content .ui-state-highlight,
+	html .ui-widget-header .ui-state-highlight {
+		border:1px solid #E05C4E;
+		text-align:center;
+	}
+	html .ui-state-active,
+	html .ui-widget-content .ui-state-active,
+	html .ui-widget-header .ui-state-active {
+		background:#E05C4E;
+		border:1px solid #C53727;
+		color:#FFF;
+		text-align:center;
+	}
+	html .ui-slider-horizontal {
+		height:0.4em;
+		background:#EEE;
+		margin:0 0.5em;
+	}
+		html .ui-slider-horizontal .ui-slider-handle {
+			background:#E05C4E;
+			border:1px solid #C53727;
+			height:0.9em;
+			width:0.9em;
+		}
+	html .ui_tpicker_time_label,
+	html .ui_tpicker_hour_label,
+	html .ui_tpicker_minute_label {
+		font-weight:bold;
+		margin-top: 0.5em;
+	}
+
+	div.ui-datepicker {
+		padding:6px;
+		font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+		background:#FFF;
+		border: 1px solid #bababa;
+		webkit-box-shadow: 0 0 5px rgba(0,0,0,.2);
+		-moz-box-shadow: 0 0 5px rgba(0,0,0,.2);
+		box-shadow: 0 0 5px rgba(0,0,0,.2);
+	}
+		.ui-datepicker-buttonpane button.ui-state-default {
+			display: inline-block; zoom: 1; *display: inline;
+			margin: 6px 0 4px; padding: 2px 6px;
+			outline: none; cursor: pointer; vertical-align: baseline;
+
+			font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+			text-shadow: 0 1px 0 rgba(255,255,255,1); font-size: 13px; line-height: 17px; font-weight: bold; text-align: center; text-decoration: none;
+
+			border: solid 1px #c6c6c6; border-color: #c6c6c6;
+
+			background: #d4d4d4;
+			background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#dfdfdf));
+			background: -moz-linear-gradient(top, #f2f2f2,  #e2e2e2);
+			background: linear-gradient(#f2f2f2, #e2e2e2);
+
+			-webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;
+			-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.08);
+			-moz-box-shadow   : 0 1px 2px rgba(0,0,0,.08);
+			box-shadow        : 0 1px 2px rgba(0,0,0,.08);
+			-webkit-background-clip: padding-box;
+		}
+		
+#zoom-image {
+font-size: 9px;
+font-family: Arial, Helvetica, sans-serif;
+text-transform: uppercase;
+color: #333;
+}
+#zoom-image {
+float: right;
+display: block;
+margin: 10px 0 0;
+padding: 0 5px;
+font-size: 9px;
+text-decoration: none;
+font-family: Arial, Helvetica, sans-serif;
+text-transform: uppercase;
+color: #333;
+background: #eee;
+-webkit-border-radius: 8px;
+-moz-border-radius: 8px;
+border-radius: 8px;
+}
+#zoom-image  i{
+	margin-top: -2px;
 }
